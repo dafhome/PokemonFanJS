@@ -1,0 +1,31 @@
+#fondo{
+    height: 600px;
+    width: 600px;
+    position: relative;
+}
+
+#personaje{
+
+    position: absolute;
+    background-image: url(src/images/663s.png);
+    width: 64px;
+    height: 64px;
+    background-position-x: 0px;
+    background-position-y: 128px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+
+}
+
+/* #personaje2{
+
+    position: absolute;
+    background-image: url(src/images/Ornitologo\ -\ Zer0.png);
+    width: 64px;
+    height: 64px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    top: 0px;
+} */
