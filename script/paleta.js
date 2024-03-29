@@ -1,3 +1,65 @@
+const paleta = [];
+
+for (let xx = 0; xx <= 960; xx += 8) {
+    for (let yy = 0; yy <= 600; yy += 8) {
+        paleta.push({
+            x: xx,
+            y: yy,
+            pos: 0,
+            act: null,
+            evento: null
+        });
+    }
+}
+
+const obstaculos = [
+    [0, 0, 112, 208],
+    [112, 0, 432, 14],
+    [464, 0, 960, 14],
+    [720, 14, 960, 600],
+    [600, 560, 720, 600],
+    [496, 584, 600, 600],
+    [248, 544, 400, 600],
+    [248, 512, 368, 544],
+    [240, 584, 248, 600],
+    [0, 560, 240, 600],
+    [0, 288, 112, 600],
+    [160, 152, 200, 192],
+    [200, 48, 368, 192],
+    [440, 152, 488, 192],
+    [488, 48, 656, 192],
+    [440, 240, 688, 376],
+    [440, 456, 656, 472],
+    [192, 296, 368, 312]
+]
+
+for (let i = 0; i < paleta.length; i++) {
+    let punto = paleta[i];
+    for (let z = 0; z < obstaculos.length; z++) {
+        if (punto.x >= obstaculos[z][0] && punto.x < obstaculos[z][2] && punto.y >= obstaculos[z][1] && punto.y <= obstaculos[z][3]) {
+            punto.pos = 1;
+        }
+    }
+}
+console.log(paleta);
+
+const eventos = [
+    [432, 0, 456, 14, 1, "/html/ciudad.html"],
+    [56, 240, 72, 256, 1, "/html/ciudad.html"]
+
+]
+
+for (let i = 0; i < paleta.length; i++) {
+    let punto = paleta[i];
+    for (let z = 0; z < eventos.length; z++) {
+        if (punto.x >= eventos[z][0] && punto.x < eventos[z][2] && punto.y >= eventos[z][1] && punto.y <= eventos[z][3]) {
+            punto.act = eventos[z][4];
+            punto.evento = eventos[z][5];
+            console.log(paleta[i])
+        }
+    }
+}
+
 let personaje = document.getElementById("personaje")
 let personaje2 = document.getElementById("personaje2")
 

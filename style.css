@@ -1,22 +1,64 @@
-#fondo{
-    height: 600px;
-    width: 600px;
-    position: relative;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: black;
 }
 
-#personaje{
+#fondo {
+    height: 676px;
+    width: 1028px;
+    position: relative;
+    border-radius: 10px;
+    /* background-color: black; */
+    background-image: url(src/images/map/Pueblo_Paleta.png);
+    /* background-blend-mode: color white; */
+}
+
+#fondo2 {
+    height: 676px;
+    width: 1028px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: black;
+    animation-name: aparecer;
+    animation-duration: 3s;
+    opacity: 0%;
+    z-index: 100;
+    animation-name: desaparecer;
+    /* transition: ease-in-out; */
+    animation-play-state: paused;
+}
+
+
+@keyframes desaparecer {
+    0% {
+        opacity: 0%;
+
+    }
+/* 
+    50% {
+        opacity: 100%;
+    } */
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+#personaje {
 
     position: absolute;
-    background-image: url(src/images/663s.png);
-    width: 64px;
-    height: 64px;
+    background-image: url(/src/images/personajes/animacion/Black.png);
+    width: 68px;
+    height: 72px;
     background-position-x: 0px;
-    background-position-y: 128px;
-    top: 0px;
-    left: 0px;
+    background-position-y: 144px;
+    /*altura 61,45*/
+    top: 248px;
+    left: 64px;
     right: 0px;
-
-
 }
 
 /* #personaje2{
