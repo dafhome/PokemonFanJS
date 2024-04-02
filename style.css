@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url(/src/fonts/Pokemon_GB.ttf);
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -11,9 +16,6 @@ body {
     width: 1028px;
     position: relative;
     border-radius: 10px;
-    /* background-color: black; */
-    background-image: url(src/images/map/Pueblo_Paleta.png);
-    /* background-blend-mode: color white; */
 }
 
 #fondo2 {
@@ -22,52 +24,14 @@ body {
     position: absolute;
     border-radius: 10px;
     background-color: black;
-    animation-name: aparecer;
     animation-duration: 3s;
     opacity: 0%;
     z-index: 100;
+
+}
+#fondo2 {
+
     animation-name: desaparecer;
     /* transition: ease-in-out; */
     animation-play-state: paused;
 }
-
-
-@keyframes desaparecer {
-    0% {
-        opacity: 0%;
-
-    }
-/* 
-    50% {
-        opacity: 100%;
-    } */
-
-    100% {
-        opacity: 100%;
-    }
-}
-
-#personaje {
-
-    position: absolute;
-    background-image: url(/src/images/personajes/animacion/Black.png);
-    width: 68px;
-    height: 72px;
-    background-position-x: 0px;
-    background-position-y: 144px;
-    /*altura 61,45*/
-    top: 248px;
-    left: 64px;
-    right: 0px;
-}
-
-/* #personaje2{
-
-    position: absolute;
-    background-image: url(src/images/Ornitologo\ -\ Zer0.png);
-    width: 64px;
-    height: 64px;
-    background-position-x: 0px;
-    background-position-y: 0px;
-    top: 0px;
-} */

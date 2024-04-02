@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: black;
+}
+
+#fondo {
+    height: 676px;
+    width: 1028px;
+    position: relative;
+    border-radius: 10px;
+    /* background-color: black; */
+    background-image: url(../src/images/map/Pueblo_Paleta.png);
+    /* background-blend-mode: color white; */
+}
+
+#fondo2 {
+    height: 676px;
+    width: 1028px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: black;
+    animation-duration: 3s;
+    opacity: 0%;
+    z-index: 100;
+
+}
+#fondo2 {
+
+    animation-name: desaparecer;
+    /* transition: ease-in-out; */
+    animation-play-state: paused;
+}
+#fondo2 {
+
+    animation-name: aparecer;
+    transition: ease-in-out;
+    animation-play-state: paused;
+}
+@keyframes desaparecer {
+    0% {
+        opacity: 0%;
+
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes aparecer {
+    0% {
+        opacity: 100%;
+
+    }
+/* 
+    50% {
+        opacity: 100%;
+    } */
+
+    100% {
+        opacity: 0%;
+        animation-play-state: paused;
+
+    }
+}
+
+
+#personaje {
+
+    position: absolute;
+    background-image: url(../src/images/personajes/animacion/Black.png);
+    width: 68px;
+    height: 72px;
+    background-position-x: 0px;
+    background-position-y: 144px;
+    /*altura 61,45*/
+    top: 248px;
+    left: 64px;
+    right: 0px;
+    z-index: 100;
+}
+
+/* #personaje2{
+
+    position: absolute;
+    background-image: url(src/images/Ornitologo\ -\ Zer0.png);
+    width: 64px;
+    height: 64px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    top: 0px;
+} */
+
+
+#personaje1 {
+
+    position: absolute;
+    background-image: url(../src/images/personajes/animacion/BW33.png);
+    width: 68px;
+    height: 72px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*altura 61,45*/
+    top: 352px;
+    left: 336px;
+    right: 0px;
+}
+#personaje2 {
+
+    position: absolute;
+    background-image: url(../src/images/personajes/animacion/BW108.png);
+    width: 68px;
+    height: 72px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*altura 61,45*/
+    top: 200px;
+    left: 576px;
+    right: 0px;
+}
+#personaje3 {
+
+    position: absolute;
+    background-image: url(../src/images/personajes/animacion/White.png);
+    width: 68px;
+    height: 72px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*altura 61,45*/
+    top: 208px;
+    left: 280px;
+    right: 0px;
+}
+.box{
+    background-image: url(/src/images/other/marco2.png);
+    background-size: cover;
+    height: 310px;
+    width: 1000px;
+    bottom: 10px;
+    z-index: 2;
+    background-color: rgb(255, 255, 255) ;
+    border-radius: 10px;
+    display: none;
+    z-index: 10;
+}
+#text{
+    padding: 50px;
+    position: absolute;
+    
+    font-family:'Pokemon','Courier New', Courier, monospace;
+    font-size: x-large;
+
+    line-height: 40px;
+    
+}
+#fondo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    
+}

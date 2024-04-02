@@ -30,7 +30,11 @@ const obstaculos = [
     [488, 48, 656, 192],
     [440, 240, 688, 376],
     [440, 456, 656, 472],
-    [192, 296, 368, 312]
+    [192, 296, 368, 312],
+    [248, 200, 312, 216],
+    [544, 200, 608, 216],
+    [304, 320, 368, 344]
+
 ]
 
 for (let i = 0; i < paleta.length; i++) {
@@ -44,8 +48,20 @@ for (let i = 0; i < paleta.length; i++) {
 console.log(paleta);
 
 const eventos = [
-    [432, 0, 456, 14, 1, "/html/ciudad.html"],
-    [56, 240, 72, 256, 1, "/html/ciudad.html"]
+    [432, 0, 456, 14, 1, "/html/paleta.html"],
+    [56, 240, 72, 256, 1, "/html/paleta.html"],
+    [240, 192, 320, 224, 1, [
+        `${localStorage.getItem("name")}, he vivido en esta isla durante décadas y nunca he visto a los Pokémon comportarse así. Algo siniestro está ocurriendo.`,
+        "Los ancianos de la aldea hablan de un antiguo Pokémon legendario que habita en los bosques. Su poder puede ser la causa de estos disturbios",
+        "Si quieres encontrar respuestas, te aconsejo que busques la Montaña del Espíritu. Allí podrías descubrir más sobre el Pokémon legendario y cómo detener su influencia maligna."]],
+    [536, 192, 616, 224, 1, [
+        "Los Pokémon que suelo cuidar están actuando de manera extraña últimamente. Parecen asustados y agresivos sin razón aparente.", 
+        `${localStorage.getItem("name")} he notado que los Pokémon evitan ciertas áreas de la isla. Tal vez allí encuentres pistas sobre lo que está pasando.`, 
+        "La única manera de calmar a estos Pokémon es con la ayuda del Pokémon legendario que habita en la isla. Pero ten cuidado, su poder es inmenso y puede ser peligroso."]],
+    [296, 312, 376, 352, 1, [
+        "He estado recopilando datos sobre el comportamiento de los Pokémon. Parece que la energía en la isla está fluctuando de manera inusual.", 
+        "Mi investigación me ha llevado a creer que el fenómeno está relacionado con la presencia de un Pokémon legendario. Pero necesitamos más pruebas para confirmarlo.", 
+        `Si estás dispuesto a ayudar, podríamos ir juntos a la Cueva de las Luminiscencias. Es un lugar conocido por su conexión con los Pokémon legendarios. ${localStorage.getItem("name")} quizás allí encontremos respuestas.`]]
 
 ]
 
@@ -191,7 +207,7 @@ function enter() {
 
     // switch (posicion) {
     //     case 1:
-            
+
     //         break;
     //     case 2:
 
@@ -205,14 +221,53 @@ function enter() {
     //     default:
 
     // }
-    let validar = comprobarAccionPaleta (x,y);
-    if (validar[0] == 1 ){
-        document.getElementById("fondo2").style.animationPlayState = "running";
-        setTimeout(function(){
-            window.location.href = validar[1];
-
-        },2000);
+    let validar = comprobarAccionPaleta(x, y);
+    if (validar[0] == 1) {
+        // document.getElementById("fondo2").style.animationPlayState = "running";
+        setTimeout(function () {
+            // window.location.href = validar[1];
+            document.querySelector(".box").style.display = "block";
+            escribirEnPantalla(validar[1][0]);
+            let intervalo = setTimeout(function () {
+                escribirEnPantalla(validar[1][1]);
+            }, 10000);
+            let intervalo2 = setTimeout(function () {
+                escribirEnPantalla(validar[1][2]);
+            }, 20000);
+            let intervalo3 = setTimeout(function () {
+                escribirEnPantalla(validar[1][3]);
+            }, 30000);
+            let intervalo4 = setTimeout(function () {
+                document.querySelector(".box").style.display = "none";
+            }, 35000);
+        }, 500);
     }
-  
 
+
+}
+
+
+function escribirEnPantalla(texto) {
+    let arr = texto;
+
+    arr = arr.split("");
+    i = 0;
+    document.getElementById("text").innerHTML = "";
+
+    let intervalo = setInterval(function () {
+        if (i == arr.length - 1) {
+            document.getElementById("text").innerHTML += arr[i];
+            clearInterval(intervalo);
+        }
+        else {
+            if (arr[i] == " ") {
+                document.getElementById("text").innerHTML += arr[i];
+                document.getElementById("text").innerHTML += arr[i + 1];
+                i += 2;
+            } else {
+                document.getElementById("text").innerHTML += arr[i];
+                i++;
+            }
+        }
+    }, 50);
 }

@@ -1,0 +1,49 @@
+#fondo {
+    background-image: url(/src/images/map/pokemon.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+#fondo2 {
+    animation-duration: 3s;
+    opacity: 0%;
+    z-index: 100;
+
+}
+#fondo2 {
+    animation-name: desaparecer;
+    /* transition: ease-in-out; */
+    animation-play-state: paused;
+}
+
+#text{
+    position: absolute;
+    color: white;
+    font-family:'Pokemon','Courier New', Courier, monospace;
+    width: 1028px;
+    bottom: 60px;
+    text-align: center;
+    text-shadow: 2px 2px 2px white;
+
+}
+.parpadea{
+    animation-name: parpadeo;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 0.5s;
+}
+
+@keyframes parpadeo{
+
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
