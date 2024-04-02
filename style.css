@@ -27,10 +27,8 @@ body {
     animation-duration: 3s;
     opacity: 0%;
     z-index: 100;
-
 }
 #fondo2 {
-
     animation-name: desaparecer;
     /* transition: ease-in-out; */
     animation-play-state: paused;

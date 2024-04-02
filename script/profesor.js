@@ -64,3 +64,4 @@ function enter(event) {
 document.addEventListener("keydown", enter);
 
 //   localStorage.setItem('nombre';nombre);
+inicio();
